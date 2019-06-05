@@ -9,27 +9,28 @@
 // Include Foundation
 @_exported import Foundation
 import UIKit
+import MUCore
 import MUHeader
 
 /// Class that define a card (title, description, indicator and image) with screen animation.
 @IBDesignable
-open class MUToast: UIView {
-    private var markerView = UIView()
-    private var imageView = UIImageView()
-    private var header = MUHeader()
+open class MUToast: MUNibView {
+    @IBOutlet private var markerView: UIView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var header: MUHeader!
     
     // Image inset constraint
-    private var markerWidth: NSLayoutConstraint?
+    @IBOutlet private var markerWidth: NSLayoutConstraint!
     
     // Image inset constraint
-    private var imageLeading: NSLayoutConstraint?
-    private var imageWidth: NSLayoutConstraint?
+    @IBOutlet private var imageLeading: NSLayoutConstraint!
+    @IBOutlet private var imageWidth: NSLayoutConstraint!
     
     // Labels inset constraints
-    private var labelsTop: NSLayoutConstraint?
-    private var labelsBottom: NSLayoutConstraint?
-    private var labelsLeading: NSLayoutConstraint?
-    private var labelsTrailing: NSLayoutConstraint?
+    @IBOutlet private var labelsTop: NSLayoutConstraint!
+    @IBOutlet private var labelsBottom: NSLayoutConstraint!
+    @IBOutlet private var labelsLeading: NSLayoutConstraint!
+    @IBOutlet private var labelsTrailing: NSLayoutConstraint!
     
     private var onTapBlock: (() -> Void)?
     
@@ -137,16 +138,16 @@ open class MUToast: UIView {
     /// The header’s horizontal padding.
     @IBInspectable open var headerHorizontalPadding: CGFloat = 16.0 {
         didSet {
-            labelsLeading?.constant = headerHorizontalPadding
-            labelsTrailing?.constant = headerHorizontalPadding
+            labelsLeading.constant = headerHorizontalPadding
+            labelsTrailing.constant = headerHorizontalPadding
         }
     }
     
     /// The header’s vertical padding.
     @IBInspectable open var headerVerticalPadding: CGFloat = 16.0 {
         didSet {
-            labelsTop?.constant = headerVerticalPadding
-            labelsBottom?.constant = headerVerticalPadding
+            labelsTop.constant = headerVerticalPadding
+            labelsBottom.constant = headerVerticalPadding
         }
     }
     
@@ -180,7 +181,7 @@ open class MUToast: UIView {
     /// The indicator’s width.
     @IBInspectable open dynamic var indicatorWidth: CGFloat = 0.0 {
         didSet {
-            markerWidth?.constant = indicatorWidth
+            markerWidth.constant = indicatorWidth
         }
     }
     
@@ -217,25 +218,11 @@ open class MUToast: UIView {
     
     // MARK: - Life cycle
     
-    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
-    convenience public init() {
-        self.init(frame: .zero)
+    /// Default setup to load the view from a xib file.
+    open override func xibSetup() {
+        super.xibSetup()
         
-        translatesAutoresizingMaskIntoConstraints = false
-    }
-    
-    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-        setupConstraint()
-    }
-    
-    /// Returns an object initialized from data in a given unarchiver.
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-        setupConstraint()
+        layer.masksToBounds = true
     }
     
     // MARK: - Animation functions
@@ -283,91 +270,9 @@ open class MUToast: UIView {
     
     // MARK: - Private functions
     
-    private func setup() {
-        setupMarker()
-        addSubview(imageView)
-        
-        addSubview(header)
-    }
-    
-    private func setupMarker() {
-        markerView.backgroundColor = indicatorColor
-        addSubview(markerView)
-        
-        let markerWidth = NSLayoutConstraint(item: markerView,
-                                             attribute: .width,
-                                             relatedBy: .equal,
-                                             toItem: nil,
-                                             attribute: .notAnAttribute,
-                                             multiplier: 1,
-                                             constant: indicatorWidth)
-        markerWidth.isActive = true
-        self.markerWidth = markerWidth
-        
-        markerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
-        markerView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        markerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
-    }
-    
-    private func setupConstraint() {
-//        let imageLeading = NSLayoutConstraint(item: detailLabel,
-//                                              attribute: .top,
-//                                              relatedBy: .equal,
-//                                              toItem: titleLabel,
-//                                              attribute: .bottom,
-//                                              multiplier: 1,
-//                                              constant: spacing)
-//        imageLeading.isActive = true
-//
-//        let imageWidth = NSLayoutConstraint(item: detailLabel,
-//                                            attribute: .top,
-//                                            relatedBy: .equal,
-//                                            toItem: titleLabel,
-//                                            attribute: .bottom,
-//                                            multiplier: 1,
-//                                            constant: spacing)
-//        imageWidth.isActive = true
-//
-//        let labelsTop = NSLayoutConstraint(item: detailLabel,
-//                                           attribute: .top,
-//                                           relatedBy: .equal,
-//                                           toItem: titleLabel,
-//                                           attribute: .bottom,
-//                                           multiplier: 1,
-//                                           constant: spacing)
-//        labelsTop.isActive = true
-//
-//        let labelsBottom = NSLayoutConstraint(item: detailLabel,
-//                                              attribute: .top,
-//                                              relatedBy: .equal,
-//                                              toItem: titleLabel,
-//                                              attribute: .bottom,
-//                                              multiplier: 1,
-//                                              constant: spacing)
-//        labelsBottom.isActive = true
-//
-//        let labelsLeading = NSLayoutConstraint(item: detailLabel,
-//                                               attribute: .top,
-//                                               relatedBy: .equal,
-//                                               toItem: titleLabel,
-//                                               attribute: .bottom,
-//                                               multiplier: 1,
-//                                               constant: spacing)
-//        labelsLeading.isActive = true
-//
-//        let labelsTrailing = NSLayoutConstraint(item: detailLabel,
-//                                                attribute: .top,
-//                                                relatedBy: .equal,
-//                                                toItem: titleLabel,
-//                                                attribute: .bottom,
-//                                                multiplier: 1,
-//                                                constant: spacing)
-//        labelsTrailing.isActive = true
-    }
-    
     private func updateImageView() {
-        imageLeading?.constant = icon == nil ? 0.0 : iconLeftPadding
-        imageWidth?.constant = icon == nil ? 0.0 : iconWidth
+        imageLeading.constant = icon == nil ? 0.0 : iconLeftPadding
+        imageWidth.constant = icon == nil ? 0.0 : iconWidth
     }
     
     private func expectedSize(in width: CGFloat) -> CGSize {

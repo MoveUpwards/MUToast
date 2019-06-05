@@ -14,5 +14,21 @@ import MUToast
 /// The ViewController
 class ViewController: UIViewController {
 
-    // MARK: Properties
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let toast = MUToast()
+        toast.backgroundColor = .orange
+        toast.cornerRadius = 20.0
+        toast.icon = UIImage(named: "logo_star")
+        toast.iconLeftPadding = 4.0
+        toast.headerVerticalPadding = 20.0
+        toast.title = "This is a Toast"
+        toast.titleColor = .green
+        toast.detail = "Read this before it disappear"
+        toast.detailColor = .green
+        toast.headerHorizontalPadding = 4.0
+        
+        toast.show(in: self)
+    }
 }

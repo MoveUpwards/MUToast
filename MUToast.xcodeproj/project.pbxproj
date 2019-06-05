@@ -20,6 +20,7 @@
 		97681E5A22A7FB1200DED08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97681E5922A7FB1200DED08C /* Main.storyboard */; };
 		97681E5F22A7FD2500DED08C /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97681E5D22A7FC4500DED08C /* Priority.swift */; };
 		97681E6022A7FD2900DED08C /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97681E5B22A7FBDC00DED08C /* Position.swift */; };
+		97941F3D22A8217E007E71A9 /* MUToast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97941F3C22A8217E007E71A9 /* MUToast.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		97681E5922A7FB1200DED08C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		97681E5B22A7FBDC00DED08C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		97681E5D22A7FC4500DED08C /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		97941F3C22A8217E007E71A9 /* MUToast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUToast.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				3D9C42A122745900000A6585 /* MUToast.swift */,
+				97941F3C22A8217E007E71A9 /* MUToast.xib */,
 				97681E5B22A7FBDC00DED08C /* Position.swift */,
 				97681E5D22A7FC4500DED08C /* Priority.swift */,
 			);
@@ -318,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97941F3D22A8217E007E71A9 /* MUToast.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
