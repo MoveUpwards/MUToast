@@ -20,7 +20,6 @@
 		97681E5A22A7FB1200DED08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97681E5922A7FB1200DED08C /* Main.storyboard */; };
 		97681E5F22A7FD2500DED08C /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97681E5D22A7FC4500DED08C /* Priority.swift */; };
 		97681E6022A7FD2900DED08C /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97681E5B22A7FBDC00DED08C /* Position.swift */; };
-		97681E6522A8033400DED08C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97681E6122A8019B00DED08C /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,12 +77,9 @@
 		3D9C432D2274629C000A6585 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D9C432F2274629C000A6585 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DB91AC4229AC263002668DA /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
-		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
-		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
 		97681E5922A7FB1200DED08C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		97681E5B22A7FBDC00DED08C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		97681E5D22A7FC4500DED08C /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
-		97681E6122A8019B00DED08C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +147,6 @@
 				3D9C42DA22745DB0000A6585 /* .swift-version */,
 				3D9C42D922745DAF000A6585 /* .swiftlint.yml */,
 				3DB91AC4229AC263002668DA /* .travis.yml */,
-				3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */,
-				3DB91AC6229AC272002668DA /* azure-pipelines.yml */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -163,7 +157,6 @@
 				3D9C42A122745900000A6585 /* MUToast.swift */,
 				97681E5B22A7FBDC00DED08C /* Position.swift */,
 				97681E5D22A7FC4500DED08C /* Priority.swift */,
-				97681E6322A8019F00DED08C /* Extension */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -203,14 +196,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		97681E6322A8019F00DED08C /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				97681E6122A8019B00DED08C /* UIViewController+Extension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +368,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97681E6522A8033400DED08C /* UIViewController+Extension.swift in Sources */,
 				3D9C42A222745900000A6585 /* MUToast.swift in Sources */,
 				97681E5F22A7FD2500DED08C /* Priority.swift in Sources */,
 				97681E6022A7FD2900DED08C /* Position.swift in Sources */,
