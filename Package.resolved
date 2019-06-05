@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MUHeader",
+        "repositoryURL": "https://github.com/MoveUpwards/MUHeader",
+        "state": {
+          "branch": null,
+          "revision": "9b35bf59f66de326fd9fe7d675e3489ae71ea35f",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

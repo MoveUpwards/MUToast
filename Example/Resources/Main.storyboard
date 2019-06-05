@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byD-W8-bxf">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="KZi-NY-RNa">
+            <objects>
+                <viewController id="byD-W8-bxf" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wxk-UY-SQj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="73O-pg-2Mw" customClass="MUHeader" customModule="MUHeader">
+                                <rect key="frame" x="20" y="144" width="374" height="8"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zd3-Il-Cq9" userLabel="Center Align" customClass="MUHeader" customModule="MUHeader">
+                                <rect key="frame" x="20" y="202" width="374" height="8"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAU-ln-Mq0" customClass="MUHeader" customModule="MUHeader">
+                                <rect key="frame" x="20" y="260" width="374" height="8"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="73O-pg-2Mw" firstAttribute="leading" secondItem="D5m-Ae-gXm" secondAttribute="leading" constant="20" id="09i-gZ-HUE"/>
+                            <constraint firstItem="OAU-ln-Mq0" firstAttribute="top" secondItem="Zd3-Il-Cq9" secondAttribute="bottom" constant="50" id="85X-89-gCp"/>
+                            <constraint firstItem="73O-pg-2Mw" firstAttribute="top" secondItem="D5m-Ae-gXm" secondAttribute="top" constant="100" id="CiX-R3-jPF"/>
+                            <constraint firstItem="Zd3-Il-Cq9" firstAttribute="leading" secondItem="OAU-ln-Mq0" secondAttribute="leading" id="RSc-NY-gIa"/>
+                            <constraint firstItem="Zd3-Il-Cq9" firstAttribute="trailing" secondItem="OAU-ln-Mq0" secondAttribute="trailing" id="Wv5-u7-Xlw"/>
+                            <constraint firstItem="Zd3-Il-Cq9" firstAttribute="top" secondItem="73O-pg-2Mw" secondAttribute="bottom" constant="50" id="YCg-1N-UDJ"/>
+                            <constraint firstItem="D5m-Ae-gXm" firstAttribute="trailing" secondItem="73O-pg-2Mw" secondAttribute="trailing" constant="20" id="tnA-NZ-zbm"/>
+                            <constraint firstItem="Zd3-Il-Cq9" firstAttribute="leading" secondItem="73O-pg-2Mw" secondAttribute="leading" id="vhn-d1-t0M"/>
+                            <constraint firstItem="Zd3-Il-Cq9" firstAttribute="trailing" secondItem="73O-pg-2Mw" secondAttribute="trailing" id="yZB-u3-lf9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D5m-Ae-gXm"/>
+                    </view>
+                    <connections>
+                        <outlet property="centerAlign" destination="Zd3-Il-Cq9" id="d4n-aa-s9P"/>
+                        <outlet property="leftAlign" destination="73O-pg-2Mw" id="wgT-hB-HD1"/>
+                        <outlet property="rightAlign" destination="OAU-ln-Mq0" id="cO8-Yn-Fiv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="euC-nz-Mco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+</document>
